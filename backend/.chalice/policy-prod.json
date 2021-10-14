@@ -1,0 +1,43 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
+        "Resource": "arn:aws:logs:*:*:*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "s3:*",
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+        "secretsmanager:GetResourcePolicy",
+        "secretsmanager:GetSecretValue",
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:ListSecretVersionIds"
+        ],
+        "Resource": ["*"]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "cognito-identity:Describe*",
+          "cognito-identity:Get*",
+          "cognito-identity:List*",
+          "cognito-idp:AdminCreateUser",
+          "cognito-idp:AdminUpdateUserAttributes",
+          "cognito-idp:AdminDeleteUser",
+          "cognito-idp:Describe*",
+          "cognito-idp:List*"
+        ],
+        "Resource": "*"
+      }
+    ]
+  }

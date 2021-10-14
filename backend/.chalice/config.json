@@ -1,0 +1,28 @@
+{
+  "version": "2.0",
+  "app_name": "poolranking-backend",
+  "tags": {
+    "Project": "MAPinsight",
+    "Owner:": "Levi Broeksma"
+  },
+  "stages": {
+    "prod": {
+      "api_gateway_stage": "api",
+      "autogen_policy": false,
+      "environment_variables": {
+        "SECRET_NAME": "postgresql-01-secret",
+        "REGION": "eu-central-1"
+      }
+    },
+    "dev": {
+      "api_gateway_stage": "api",
+      "autogen_policy": false,
+      "environment_variables": {
+        "SECRET_NAME": "postgresql-01-secret",
+        "REGION": "eu-central-1"
+      }
+    }
+  },
+  "lambda_memory_size": 256,
+  "layers": []
+}
