@@ -1,3 +1,3 @@
-aws s3 sync ./dist/ s3://>>>bucket_name<<<
-aws cloudfront create-invalidation --distribution-id >>>distribution-id<<< --paths "/*"
+aws s3 sync ./dist/ s3://poolranking
+aws cloudfront create-invalidation --distribution-id EJYSHGEHBZDY --paths "/*"
 PAUSE
