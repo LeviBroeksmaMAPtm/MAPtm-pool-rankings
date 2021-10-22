@@ -69,28 +69,28 @@
     <!-- ------ LEADERBOARD ------ -->
 
     <div class="flex justify-around" x-show="tab === 'leaderboard'">
-      <div x-data="general()" x-init="init()" class="h-full w-full justify-center items-center flex flex-col p-4 mb-10">
+      <div x-data="general()" x-init="init()" class="h-full w-full justify-center items-center flex flex-col p-4 ">
 
         <table class="rounded-lg overflow-hidden shadow-2xl max-w-3xl w-full">
           <thead class="bg-gray-800 text-white border-b-2 border-maptm-orange">
             <tr>
-              <th class="px-6 py-4 text-left">Rank</th>
-              <th class="px-6 py-4 text-left">Player</th>
-              <th class="px-6 py-4 text-left">Wins</th>
-              <th class="px-6 py-4 text-left">Losses</th>
-              <th class="px-6 py-4 text-left">Points</th>
-              <th class="px-6 py-4 text-left"></th>
+              <th class="p-1 sm:p-4 text-sm sm:text-base text-left">Rank</th>
+              <th class="p-1 sm:p-4 text-sm sm:text-base text-left">Player</th>
+              <th class="p-1 sm:p-4 text-sm sm:text-base text-left">Wins</th>
+              <th class="p-1 sm:p-4 text-sm sm:text-base text-left">Losses</th>
+              <th class="p-1 sm:p-4 text-sm sm:text-base text-left">Points</th>
+              <th class="p-1 sm:p-4 text-sm sm:text-base text-left"></th>
             </tr>
           </thead>
           <tbody class="bg-gray-600 text-gray-100">
             <template x-for="(row, index) in scoreList" :key="index">
               <tr class="border-b border-maptm-orange">
-                <td class="px-6 py-2" x-text="index + 1"></td>
-                <td class="px-6 py-2 capitalize" x-text="row.player"></td>
-                <td class="px-6 py-2" x-text="row.wins"></td>
-                <td class="px-6 py-2" x-text="row.losses"></td>
-                <td class="px-6 py-2" x-text="row.wins - row.losses"></td>
-                <td class="px-4 py-1 grid grid-cols-2">
+                <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="index + 1"></td>
+                <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base capitalize" x-text="row.player"></td>
+                <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="row.wins"></td>
+                <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="row.losses"></td>
+                <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="row.wins - row.losses"></td>
+                <td class="px-2 sm:px-4 py-1 grid grid-cols-2">
                   <button id="winner" @click="add_result(row.id, row.wins,row.losses + 1); get_data();"
                     class="bg-gray-700 hover:bg-gray-900 p-1 rounded-l-lg text-maptm-orange border border-gray-50 border-r-0 justify-center flex">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -118,7 +118,7 @@
     <!-- ------ TOP 3 ------ -->
 
     <div x-show="tab === 'top_3'" class="flex flex-col items-center gap-8 p-8">
-      <h1 class="text-4xl text-center px-10 py-8 shadow-2xl mb-10 text-maptm-orange font-bold bg-gray-900 rounded-md max-w-lg">Current Leaders</h1>
+      <h1 class="text-4xl text-center px-10 py-8 shadow-2xl text-maptm-orange font-bold bg-gray-900 rounded-md max-w-lg">Current Leaders</h1>
       <div x-data="leaders()" x-init="init()" class="flex flex-col items-center gap-10 lg:flex-row">
         <template x-for="(row, index) in currentLeaders" :key="index">
           <div class="bg-gray-800 border-2  border-maptm-orange shadow-2xl rounded-lg box-border mb-4">
@@ -204,10 +204,10 @@
               <li class="pb-5 text-center">Het is de bedoeling dat <strong>ten alle tijden</strong> de speler minimaal <strong>een voet op de grond heeft.</strong>
               </li>
             </ul>
-            <div class="bg-gray-800 p-6 flex flex-col lg:flex-row  gap-4 text-white">
-              <img src="/Rack.png" class="h-48" alt="Correct pool rack">
+            <div class="bg-gray-800 p-6 flex flex-col sm:flex-row  gap-4 text-white items-center">
+              <img src="/Rack.png" class="w-48 " alt="Correct pool rack">
               <div class="flex items-center p-4">
-                <p>De officiele ligging van de ballen zie je hier links. Het <strong  class="text-maptm-orange">belangrijkste</strong> is echter dat de onderste twee hoeken niet beide van hetzelfde soort zijn. Dit heeft te maken met de vergrootte kans dat deze ballen er in gaan bij het breken.</p>
+                <p>De officiele ligging van de ballen zie je hier. Het <strong  class="text-maptm-orange">belangrijkste</strong> is echter dat de onderste twee hoeken niet beide van hetzelfde soort zijn. Dit heeft te maken met de vergrootte kans dat deze ballen er in gaan bij het breken.</p>
               </div>
             </div>
           </div>
