@@ -28,6 +28,9 @@ module.exports = {
     }
   },
   variants: {
+    extend: {
+      borderWidth: ['last'],
+    },
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     display: ({ after }) => after(['group-hover']),
     opacity: ({ after }) => after(['group-hover']),

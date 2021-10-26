@@ -9,7 +9,7 @@
   <meta name="description" content="Tailwind CSS - MAPtm template">
   <meta name="author" content="by MAPtm">
 
-  <title>Tailwind CSS - MAPtm template</title>
+  <title>MAPtm Poolranking</title>
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
@@ -84,7 +84,7 @@
           </thead>
           <tbody class="bg-gray-600 text-gray-100">
             <template x-for="(row, index) in scoreList" :key="index">
-              <tr class="border-b border-maptm-orange">
+              <tr class="border-b border-maptm-orange last:border-0">
                 <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="index + 1"></td>
                 <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base capitalize" x-text="row.player"></td>
                 <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="row.wins"></td>
@@ -202,6 +202,11 @@
                 <div class="h-px w-32 bg-maptm-orange"></div>
               </li>
               <li class="pb-5 text-center">Het is de bedoeling dat <strong>ten alle tijden</strong> de speler minimaal <strong>een voet op de grond heeft.</strong>
+              </li>
+              <li class="w-full flex justify-center items-center pb-5">
+                <div class="h-px w-32 bg-maptm-orange"></div>
+              </li>
+              <li class="pb-5 text-center">Voor elke stoot <strong class="text-maptm-orange text-xl">KRIJTEN!</strong> Dit is belanrijk om het slijten van de top van de keu tegen te gaan en komt ten goede van de directie van jouw stoot.
               </li>
             </ul>
             <div class="bg-gray-800 p-6 flex flex-col sm:flex-row  gap-4 text-white items-center">

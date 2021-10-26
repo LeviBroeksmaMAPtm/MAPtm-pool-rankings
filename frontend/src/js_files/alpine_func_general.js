@@ -51,5 +51,26 @@
             this.get_data()
          },
 
+         // Dit is om te testen of de update dan beter gaat na het toevoegen van een score
+         add_result_two(id, wins, losses) {
+            const url_full = new URL('https://pb647b1zrf.execute-api.eu-central-1.amazonaws.com/api/update_score')
+
+            fetch(url_full,{
+                method: 'PUT',
+                headers:{
+                'Content-Type':'application/json'
+                },
+                body: JSON.stringify(
+                    {
+                        "id": id,
+                        "wins": wins,
+                        "losses": losses
+                    }
+                )
+            }).then(
+                this.get_data()
+            )
+         },
+
      } // End return
  };
