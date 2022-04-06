@@ -91,7 +91,7 @@
                 <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="row.losses"></td>
                 <td class="px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base" x-text="row.wins - row.losses"></td>
                 <td class="px-2 sm:px-4 py-1 grid grid-cols-2">
-                  <button id="winner" @click="add_result(row.id, row.wins,row.losses + 1); get_data();"
+                  <button id="winner" @click="addResultAndRefresh(row.id, row.wins,row.losses + 1)"
                     class="bg-gray-700 hover:bg-gray-900 p-1 rounded-l-lg text-maptm-orange border border-gray-50 border-r-0 justify-center flex">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
@@ -99,7 +99,7 @@
                         d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </button>
-                  <button id="loser" @click="add_result(row.id, row.wins + 1, row.losses); get_data();"
+                  <button id="loser" @click="addResultAndRefresh(row.id, row.wins + 1, row.losses)"
                     class="bg-gray-700 hover:bg-gray-900 p-1 rounded-r-lg border border-gray-50 text-maptm-orange justify-center flex">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">

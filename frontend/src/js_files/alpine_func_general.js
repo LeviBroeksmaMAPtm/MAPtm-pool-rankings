@@ -10,12 +10,12 @@
          scoreList: [],
          init() {
 
-            this.get_data()
+            this.get_data();
 
          },
 
          get_data() {
-            const url_full = new URL('https://pb647b1zrf.execute-api.eu-central-1.amazonaws.com/api/get-ranking')
+            const url_full = new URL('https://pb647b1zrf.execute-api.eu-central-1.amazonaws.com/api/get-ranking');
 
             fetch(url_full).then(response => {
                 if(response.status === 200) return response.json();
@@ -27,12 +27,12 @@
 
          sortList() {
              this.scoreList.sort(function (a, b) {
-                 return (b.wins - b.losses) - (a.wins - a.losses)
-             })
+                 return (b.wins - b.losses) - (a.wins - a.losses);
+             });
          },
 
          add_result (id, wins, losses) {
-            const url_full = new URL('https://pb647b1zrf.execute-api.eu-central-1.amazonaws.com/api/update_score')
+            const url_full = new URL('https://pb647b1zrf.execute-api.eu-central-1.amazonaws.com/api/update_score');
 
             fetch(url_full,{
                 method: 'PUT',
@@ -47,17 +47,16 @@
                     }
                 )})
                 .then(response => {
-                    console.log(response.status);
-
                     if (response.status === 200) return response.json();
-                  })
-                  .then(json_data => {
-                      console.log(json_data);
-                      this.get_data();
-                }
-            )
+                  });
          },
 
+         addResultAndRefresh(id, wins, losses) {
+             this.add_result(id, wins, losses);
+             setTimeout(() => {
+                this.get_data();
+             }, 500);
+         }
          // Dit is om te testen of de update dan beter gaat na het toevoegen van een score
 
 
